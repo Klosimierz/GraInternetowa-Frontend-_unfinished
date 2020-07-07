@@ -1,0 +1,14 @@
+<p>buildings works!</p>
+<table class="table">
+    <tbody>
+        <tr *ngFor="let building of buildingsList">
+            <td>IMAGE</td>
+            <td>{{building.name}} level:</td>
+            <td>{{building.type}}</td>
+            <td>{{building.description}}</td>
+            <td>
+                <button class="btn btn-primary">Build</button>
+            </td>     
+        </tr>
+    </tbody>
+</table>

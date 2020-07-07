@@ -1,0 +1,19 @@
+[{
+    "name": "stone mine",
+    "type": "mine",
+    "description": "none yet",
+    "base_prod_h": "60"
+},
+{
+    "name": "metal mine",
+    "type": "mine",
+    "description": "none yet",
+    "base_prod_h": "30"
+},
+{
+    "name": "fuel rig",
+    "type": "mine",
+    "description": "none yet",
+    "base_prod_h": "10"
+}
+]

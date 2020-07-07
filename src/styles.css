@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.bg-ogBlue {
+    background-color: #3e81de;
+}
+.bg-ogBlueDark {
+    background-color: #0046a8;
+}

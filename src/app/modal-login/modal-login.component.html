@@ -1,0 +1,81 @@
+<div class="container w-50 bg-dark mx-auto my-3 rounded">
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="logonForm" (ngSubmit)="signIn(logonForm)">
+                <div class="form-group text-white" align="center">
+                    <h3 class="">
+                        Login
+                    </h3>
+                    <div class="">
+                        <label for="">Username</label>
+                        <input formControlName="name" type="text" class="rounded-pill">
+                    </div>
+                    <div>
+                        <label for="" class="">Password</label>
+                        <input formControlName="password" type="password" class="rounded-pill">
+                    </div>
+                    <div class="alert alert-warning mx-1 my-1" *ngIf="fInputErrors()">
+                        <div *ngIf="loginUsername.errors?.required">
+                            Username can't be left blank
+                        </div>
+                        <div *ngIf="loginUsername.errors?.noSpacesAllowed">
+                            Username can't contain spaces
+                        </div>
+                        <div *ngIf="loginPassword.errors?.required">
+                            Password required
+                        </div>
+                        
+                    </div>
+                    <div *ngIf="invalidLogin" class="alert alert-danger">
+                        Wrong username and/or password
+                    </div>
+                    
+                    <button type="submit" [disabled]="fInputErrors()" class="btn btn-primary mb-2">Log in</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <form [formGroup]="regonForm" (ngSubmit)="signUp(regonForm)">
+                <div class="form-group text-white" align="center">
+                    <h3 class="">
+                        Register
+                    </h3>
+                    <div class="">
+                        <label for="">Username</label>
+                        <input formControlName="name" type="text" class="rounded-pill">
+                    </div>
+                    <div>
+                        <label for="">Password</label>
+                        <input formControlName="password" type="password" class="rounded-pill">
+                    </div>
+                    <div *ngIf="fInputErrorsReg()" class="alert alert-warning mx-1 my-1">
+                        <div *ngIf="regUsername.errors?.required">Username can't be left blank</div>
+                        <div *ngIf="regUsername.errors?.maxlength">
+                            Username contains too many characters
+                        </div>
+                        <div *ngIf="regUsername.errors?.minlength">
+                            Username contains too few characters
+                        </div>
+                        <div *ngIf="regPassword.errors?.required">Password can't be left blank</div>
+                        <div *ngIf="regPassword.errors?.maxlength">
+                            Password contains too many characters
+                        </div>
+                        <div *ngIf="regPassword.errors?.minlength">
+                            Password contains too few characters
+                        </div>
+                    </div>
+                    
+                    <div *ngIf="invalidRegistration" class="alert alert-danger">
+                        Registration failed
+                    </div>
+                    <button type="submit" [disabled]="fInputErrorsReg()"class="btn btn-primary mb-2">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center text-white">
+        <p>
+            Under construction
+        </p>
+    </div>
+</div>
