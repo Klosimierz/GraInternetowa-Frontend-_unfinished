@@ -6,13 +6,13 @@
                     <h3 class="">
                         Login
                     </h3>
-                    <div class="">
-                        <label for="">Username</label>
-                        <input formControlName="name" type="text" class="rounded-pill">
+                    <div class="py-1">
+                        <label for="name" class="sr-only">Username</label>
+                        <input formControlName="name" type="text" placeholder="Username" class="rounded border border-primary">
                     </div>
-                    <div>
-                        <label for="" class="">Password</label>
-                        <input formControlName="password" type="password" class="rounded-pill">
+                    <div class="py-1">
+                        <label for="password" class="sr-only">Password</label>
+                        <input formControlName="password" type="password" class="rounded border border-primary" placeholder="Password">
                     </div>
                     <div class="alert alert-warning mx-1 my-1" *ngIf="fInputErrors()">
                         <div *ngIf="loginUsername.errors?.required">
@@ -30,7 +30,7 @@
                         Wrong username and/or password
                     </div>
                     
-                    <button type="submit" [disabled]="fInputErrors()" class="btn btn-primary mb-2">Log in</button>
+                    <button type="submit" [disabled]="fInputErrors()" class="btn btn-primary my-2">Log in</button>
                 </div>
             </form>
         </div>
@@ -40,13 +40,13 @@
                     <h3 class="">
                         Register
                     </h3>
-                    <div class="">
-                        <label for="">Username</label>
-                        <input formControlName="name" type="text" class="rounded-pill">
+                    <div class="py-1">
+                        <label for="name" class="sr-only">Username</label>
+                        <input formControlName="name" type="text" class="rounded border border-primary" placeholder="Userame">
                     </div>
-                    <div>
-                        <label for="">Password</label>
-                        <input formControlName="password" type="password" class="rounded-pill">
+                    <div class="py-1">
+                        <label for="password" class="sr-only">Password</label>
+                        <input formControlName="password" type="password" class="rounded border border-primary" placeholder="Password">
                     </div>
                     <div *ngIf="fInputErrorsReg()" class="alert alert-warning mx-1 my-1">
                         <div *ngIf="regUsername.errors?.required">Username can't be left blank</div>
@@ -63,12 +63,15 @@
                         <div *ngIf="regPassword.errors?.minlength">
                             Password contains too few characters
                         </div>
+                        <div *ngIf="regUsername.errors?.noSpacesAllowed">
+                            Username can't contain spaces
+                        </div>
                     </div>
                     
                     <div *ngIf="invalidRegistration" class="alert alert-danger">
                         Registration failed
                     </div>
-                    <button type="submit" [disabled]="fInputErrorsReg()"class="btn btn-primary mb-2">Register</button>
+                    <button type="submit" [disabled]="fInputErrorsReg()"class="btn btn-primary my-2">Register</button>
                 </div>
             </form>
         </div>

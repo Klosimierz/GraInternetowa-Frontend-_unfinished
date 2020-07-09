@@ -12,6 +12,8 @@ import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { JwtHelperService,JWT_OPTIONS } from '@auth0/angular-jwt';
 import { BuildingsComponent } from './gmodule/buildings/buildings.component';
 import { ResearchComponent } from './gmodule/research/research.component';
+import { ShowitemComponent } from './gmodule/showitem/showitem.component';
+import { Authguard } from './services/authguard.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { ResearchComponent } from './gmodule/research/research.component';
     ModalLoginComponent,
     BuildingsComponent,
     ResearchComponent,
+    ShowitemComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { ResearchComponent } from './gmodule/research/research.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
-      {path: 'player', component: GmoduleComponent,
+      {path: 'player', component: GmoduleComponent,canActivate: [Authguard],
       children: [
         {path:'buildings', component: BuildingsComponent},
         {path:'research',component: ResearchComponent}
@@ -38,7 +41,8 @@ import { ResearchComponent } from './gmodule/research/research.component';
     ])
   ],
   providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService ],
+    JwtHelperService,
+    Authguard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

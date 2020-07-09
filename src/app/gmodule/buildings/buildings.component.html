@@ -1,14 +1,108 @@
-<p>buildings works!</p>
+<div class="container" *ngIf="buildingLevels$ | async as blevels">
 <table class="table">
     <tbody>
-        <tr *ngFor="let building of buildingsList">
-            <td>IMAGE</td>
-            <td>{{building.name}} level:</td>
-            <td>{{building.type}}</td>
-            <td>{{building.description}}</td>
+        <tr class="">
+            <td >
+                <button (click)='tooltipFlag[0]=!tooltipFlag[0]'>
+                    <img src="" alt="none yet">
+                </button>
+            </td>
+            <td >
+                Stone Quarry
+            </td>
+            <td >
+                Level: {{blevels.body.building_1}}
+            </td>
             <td>
-                <button class="btn btn-primary">Build</button>
-            </td>     
+                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
+                    {{blevels.body.building_1>0 ? 'Upgrade':'Build'}}
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="tooltipFlag[0]===true">
+            <app-showitem class=""  [playerObject]="bcd"></app-showitem>
+        </tr>
+        <tr >
+            <td>
+                <button (click)='tooltipFlag[1]=!tooltipFlag[1]'>
+                    <img src="" alt="none yet">
+                </button>
+                <app-showitem class="" *ngIf="tooltipFlag[1]===true" [playerObject]="bcd"></app-showitem>
+            </td>
+            <td>
+                Metal mine
+            </td>
+            <td>
+                Level: {{blevels.body.building_2}}
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
+                    {{blevels.body.building_2>0 ? 'Upgrade':'Build'}}
+                </button>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <button (click)='tooltipFlag[2]=!tooltipFlag[2]'>
+                    <img src="" alt="none yet">
+                </button>
+                <app-showitem class="" *ngIf="tooltipFlag[2]===true" [playerObject]="bcd"></app-showitem>
+            </td>
+            <td>
+                Fuel rig
+            </td>
+            <td>
+                Level: {{blevels.body.building_3}}
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
+                    {{blevels.body.building_3>0 ? 'Upgrade':'Build'}}
+                </button>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <button (click)='tooltipFlag[3]=!tooltipFlag[3]'>
+                    <img src="" alt="none yet">
+                </button>
+                <app-showitem class="" *ngIf="tooltipFlag[3]===true" [playerObject]="bcd"></app-showitem>
+            </td>
+            <td>
+                Research Facility
+            </td>
+            <td>
+                Level: {{blevels.body.building_4}}
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
+                    Build
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </tbody>
 </table>
+</div>

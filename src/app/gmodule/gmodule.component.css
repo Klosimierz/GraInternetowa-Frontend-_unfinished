@@ -1,0 +1,14 @@
+.btn-leftmenu{
+    background-image: linear-gradient(#A1A1A1, #292929);
+    border: 1px solid gray;
+    width: 100%;
+    color: White;
+    margin: 0.12em 0;
+    border-radius: 5px;
+}
+.gradient-menu-L{
+    background-image: linear-gradient(to right,#121212, #595959);
+}
+.gradient-menu-R{
+    background-image: linear-gradient(to left,#121212, #595959);
+}

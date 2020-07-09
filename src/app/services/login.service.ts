@@ -21,4 +21,13 @@ export class LoginService {
   //working but change to an environment endpoint
   }
 
+  isLogged() {
+    let token = localStorage.getItem('token');
+    if(this.jwt.isTokenExpired(token)||!token) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
 }

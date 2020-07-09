@@ -44,7 +44,6 @@ export class ModalLoginComponent implements OnInit {
   signIn(cred) {
     this.loginService.login(cred.value).subscribe(response => {
       const token = response.headers.get('x-auth-token');
-      console.log('abc');
       if(!token) {
         console.log('Token was not provided');
         this.invalidLogin = true;
