@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResourcesService } from 'src/app/services/resources.service';
+import * as resData from './res.json';
 
 @Component({
   selector: 'app-research',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResearchComponent implements OnInit {
 
-  constructor() { }
+  researchLevels;
+  researchTexts: any = resData;
+
+  constructor(private resService: ResourcesService) { }
 
   ngOnInit() {
+    this.resService.getPlayer('research').subscribe((data) => {
+      this.researchLevels = data;
+    },
+    (error) => {
+      console.log('err');
+    },
+    );
   }
 
 }

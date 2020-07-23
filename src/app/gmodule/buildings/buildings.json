@@ -1,19 +1,110 @@
 [{
     "name": "stone mine",
     "type": "mine",
-    "description": "none yet",
-    "base_prod_h": "60"
+    "description": "W kopalni kamienia wydobywa sie kamien, kilofem czy huk wie czym.Ale to musi byc chujowa praca",
+    "base_cost": {
+        "stone": 50,
+        "metal": 60,
+        "fuel": 0
+    },
+    "base_prod_h": 60,
+    "imgUrl": "assets/22.gif"
 },
 {
     "name": "metal mine",
     "type": "mine",
-    "description": "none yet",
-    "base_prod_h": "30"
+    "description": "Tak jak w kopalni kamienia tylko tutaj chyba lepiej placa",
+    "base_cost": {
+        "stone": 90,
+        "metal": 80,
+        "fuel": 0
+    },
+    "base_prod_h": 30,
+    "imgUrl": "assets/22.gif"
 },
 {
     "name": "fuel rig",
     "type": "mine",
-    "description": "none yet",
-    "base_prod_h": "10"
+    "description": "desc c",
+    "base_cost": {
+        "stone": 50,
+        "metal": 90,
+        "fuel": 0
+    },
+    "base_prod_h": "10",
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "a",
+    "type": "mine",
+    "description": "desc c",
+    "base_cost": {
+        "stone": 100,
+        "metal": 90,
+        "fuel": 25
+    },
+    "base_prod_h": "10",
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "b",
+    "type": "mine",
+    "description": "desc c",
+    "base_prod_h": "10",
+    "base_cost": {
+        "stone": 200,
+        "metal": 350,
+        "fuel": 200
+    },
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "c",
+    "type": "mine",
+    "description": "desc c",
+    "base_cost": {
+        "stone": 120,
+        "metal": 240,
+        "fuel": 100
+    },
+    "base_prod_h": "10",
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "d",
+    "type": "mine",
+    "description": "desc c",
+    "base_prod_h": "10",
+    "base_cost": {
+        "stone": 500,
+        "metal": 1200,
+        "fuel": 1000
+    },
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "e",
+    "type": "mine",
+    "description": "desc c",
+    "base_prod_h": "10",
+    "base_cost": {
+        "stone": 1000,
+        "metal": 600,
+        "fuel": 500
+    },
+    "imgUrl": "assets/22.gif"
+},
+{
+    "name": "f",
+    "type": "mine",
+    "description": "desc c",
+    "base_prod_h": "10",
+    "base_cost": {
+        "stone": 1000,
+        "metal": 2000,
+        "fuel": 1000
+    },
+    "imgUrl": "assets/22.gif"
 }
+
 ]

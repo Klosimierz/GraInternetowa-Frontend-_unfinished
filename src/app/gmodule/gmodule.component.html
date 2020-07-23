@@ -1,29 +1,33 @@
-<div class="container-fluid" *ngIf="playerResources$ | async as pres">
+<div class="container-fluid border-gamearea" *ngIf="playerResources$ | async as pres">
     <div class="row">
-        <div class="col-2 text-center text-white px-1 py-2 gradient-menu-L">
-            <p class="">Welcome {{nick}}</p>
+        <div class="col-2 text-center text-white py-2 gradient-menu-L" style="font-family: Play;">
+            <h3 class="py-3">Welcome {{nick}}</h3>
             <div class="btn-group-vertical w-100">
                 <a class="btn-leftmenu" routerLink='buildings'>Buildings</a>
                 <a class="btn-leftmenu" routerLink='research'>Research</a>
                 <a class="btn-leftmenu" routerLink='production'>Production</a>
-            </div>               
+            </div>
         </div>
-        <div class="col-8 bg-white px-1 py-2">
-            <div class="float-left">
+        <div class="col-8 bg-lightplus px-0">
+          <div class="row m-2">
+            <div class="resource-tab p-2 col-4 bg-dark text-white">
                 <p>Available resources</p>
-                Stone: {{pres.body.stone}} Metal: {{pres.body.metal}} Fuel: {{pres.body.fuel}}
+                Stone: {{pres.stone}} Metal: {{pres.metal}} Fuel: {{pres.fuel}}
             </div>
-            <div class="float-right">
-                <p>Hourly production</p>
-                Stone: Metal: Fuel:
+            <div class="resource-tab p-2 col-4 text-center bg-dark text-white">
+                <p>Co tu być</p>
             </div>
+            <div class="resource-tab p-2 col-4 text-right bg-dark text-white">
+                <p>Server time:</p>
+                Time since data sync:
+            </div>
+          </div>
+          <div class="pb-5">
             <router-outlet></router-outlet>
+          </div>
         </div>
-        <div class="col-2 text-center text-white px-1 py-2 gradient-menu-R">
+        <div class="col-2 text-center text-white px-1 py-2 gradient-menu-R" style="font-family: Play;">
             GHI
         </div>
-    </div>
-    <div class="row bg-light">
-        JKL
     </div>
 </div>

@@ -1,6 +1,5 @@
 .btn-leftmenu{
     background-image: linear-gradient(#A1A1A1, #292929);
-    border: 1px solid gray;
     width: 100%;
     color: White;
     margin: 0.12em 0;
@@ -11,4 +10,22 @@
 }
 .gradient-menu-R{
     background-image: linear-gradient(to left,#121212, #595959);
+}
+
+.bg-lightplus{
+    background-color: #595959;
+}
+
+.border-gamearea {
+    border: solid 1px #ccc;
+}
+
+.resource-tab{
+    font-family: Play;
+    font-size: large;
+    border: solid 2px gray;
+}
+
+p{
+    margin-bottom: 0;
 }

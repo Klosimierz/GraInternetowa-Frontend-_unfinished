@@ -1,0 +1,22 @@
+[
+  {
+    "resName": "Szybkie wydobycie żelaza",
+    "description": "adfgasdfgsefefe",
+    "imgUrl": "assets/1.gif",
+    "prices": {
+      "stone": 500,
+      "metal": 1500,
+      "fuel": 1200
+    }
+  },
+  {
+    "resName": "Odzysk gruzu",
+    "description": "adfgasdfgsefefe",
+    "imgUrl": "assets/22.gif",
+    "prices": {
+      "stone": 1200,
+      "metal": 4000,
+      "fuel": 2000
+    }
+  }
+]

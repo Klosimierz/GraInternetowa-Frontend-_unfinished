@@ -1,1 +1,6 @@
-<p>research works!</p>
+<div class="container">
+<div *ngIf="researchLevels" class="">
+  <app-item-card [resItem]='researchTexts.default[0]' [resItemLevel]='researchLevels.tier_1'></app-item-card>
+  <app-item-card [resItem]='researchTexts.default[1]' [resItemLevel]='researchLevels.tier_2'></app-item-card>
+</div>
+</div>

@@ -1,108 +1,23 @@
-<div class="container" *ngIf="buildingLevels$ | async as blevels">
-<table class="table">
-    <tbody>
-        <tr class="">
-            <td >
-                <button (click)='tooltipFlag[0]=!tooltipFlag[0]'>
-                    <img src="" alt="none yet">
-                </button>
-            </td>
-            <td >
-                Stone Quarry
-            </td>
-            <td >
-                Level: {{blevels.body.building_1}}
-            </td>
-            <td>
-                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
-                    {{blevels.body.building_1>0 ? 'Upgrade':'Build'}}
-                </button>
-            </td>
-        </tr>
-        <tr *ngIf="tooltipFlag[0]===true">
-            <app-showitem class=""  [playerObject]="bcd"></app-showitem>
-        </tr>
-        <tr >
-            <td>
-                <button (click)='tooltipFlag[1]=!tooltipFlag[1]'>
-                    <img src="" alt="none yet">
-                </button>
-                <app-showitem class="" *ngIf="tooltipFlag[1]===true" [playerObject]="bcd"></app-showitem>
-            </td>
-            <td>
-                Metal mine
-            </td>
-            <td>
-                Level: {{blevels.body.building_2}}
-            </td>
-            <td>
-                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
-                    {{blevels.body.building_2>0 ? 'Upgrade':'Build'}}
-                </button>
-            </td>
-        </tr>
-        <tr >
-            <td>
-                <button (click)='tooltipFlag[2]=!tooltipFlag[2]'>
-                    <img src="" alt="none yet">
-                </button>
-                <app-showitem class="" *ngIf="tooltipFlag[2]===true" [playerObject]="bcd"></app-showitem>
-            </td>
-            <td>
-                Fuel rig
-            </td>
-            <td>
-                Level: {{blevels.body.building_3}}
-            </td>
-            <td>
-                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
-                    {{blevels.body.building_3>0 ? 'Upgrade':'Build'}}
-                </button>
-            </td>
-        </tr>
-        <tr >
-            <td>
-                <button (click)='tooltipFlag[3]=!tooltipFlag[3]'>
-                    <img src="" alt="none yet">
-                </button>
-                <app-showitem class="" *ngIf="tooltipFlag[3]===true" [playerObject]="bcd"></app-showitem>
-            </td>
-            <td>
-                Research Facility
-            </td>
-            <td>
-                Level: {{blevels.body.building_4}}
-            </td>
-            <td>
-                <button class="btn btn-primary" (click)='upgradeBuilding(stoneMine)'>
-                    Build
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<div class="container m-3" *ngIf="buildingLevels$ | async as blevels">
+    <div class="card bg-dark text-white mt-1" *ngFor='let element of buildingDesc.default; let index_level=index'>
+        <div class="row" *ngIf='calculateCost(element,blevels[index_level]) as resultingCost'>
+            <div class="col-2">
+                <img class="card-img" style="border-radius: 0" src="{{element.imgUrl}}" alt="wait">
+            </div>
+            <div class="col-8" >
+                <h5 class="text-center">{{element.name}}</h5>
+                <p class="text-left">{{element.description}}</p>
+                <p class="text-center">Koszt Budowy: 
+                    Metal - {{resultingCost.reqMetal}}
+                    Kamien - {{resultingCost.reqStone}}
+                    Paliwo - {{resultingCost.reqFuel}}</p>
+            </div>
+            <div class="col-2 d-block text-center">
+                <p class="mb-1 mt-4">Poziom: {{blevels[index_level]>0 ? blevels[index_level] : 'Nie wybudowano'}}</p>
+                <button [class]='canBuild(resultingCost)'>
+                    {{blevels[index_level]>0 ? 'Upgrade' : 'Build'}}
+                </button> 
+            </div>
+        </div>
+    </div>
 </div>

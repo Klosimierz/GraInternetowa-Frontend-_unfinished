@@ -12,7 +12,6 @@ export class GmoduleComponent implements OnInit {
 
   playerResources$ : Observable<Object>;
   nick: String;
-
   constructor(private resourcesService: ResourcesService,private jwt: JwtHelperService) { }
 
   

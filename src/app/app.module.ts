@@ -14,6 +14,7 @@ import { BuildingsComponent } from './gmodule/buildings/buildings.component';
 import { ResearchComponent } from './gmodule/research/research.component';
 import { ShowitemComponent } from './gmodule/showitem/showitem.component';
 import { Authguard } from './services/authguard.service';
+import { ItemCardComponent } from './gmodule/item-card/item-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { Authguard } from './services/authguard.service';
     BuildingsComponent,
     ResearchComponent,
     ShowitemComponent,
+    ItemCardComponent,
   ],
   imports: [
     BrowserModule,

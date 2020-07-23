@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowitemComponent implements OnInit {
 
-  @Input() playerObject: Object;
+  @Input() playerDesc: Object;
+  @Input() playerL: Number;
 
   constructor() { }
 
